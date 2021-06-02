@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="152.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
-    <TextField fx:id="str1" layoutX="55.0" layoutY="29.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="55.0" />
-   <TextField fx:id="str2" layoutX="55.0" layoutY="62.0" prefHeight="25.0" prefWidth="150.0" />
-    <Button layoutX="55.0" layoutY="97.0" mnemonicParsing="false" onAction="#buttonChek" prefHeight="20.0" prefWidth="150.0" text="Инвертировать" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
+   <children>
+      <TextField id="str1" fx:id="str1" layoutX="175.0" layoutY="89.0" prefHeight="26.0" prefWidth="160.0" />
+      <ComboBox id="Cbox" fx:id="Cbox" layoutX="359.0" layoutY="90.0" prefWidth="150.0" />
+      <Button layoutX="175.0" layoutY="174.0" mnemonicParsing="false" onAction="#cash" prefHeight="38.0" prefWidth="160.0" text="Снять">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Text layoutX="175.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Введите сумму для снятия:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <TextField id="str1" fx:id="str2" layoutX="175.0" layoutY="135.0" prefHeight="26.0" prefWidth="160.0" />
+      <Text layoutX="175.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Введите ваше имя:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+   </children>
 </AnchorPane>

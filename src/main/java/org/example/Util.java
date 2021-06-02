@@ -1,20 +1,15 @@
 package org.example;
 
-import static java.lang.Math.pow;
-import static java.lang.Math.sqrt;
+import javafx.scene.control.Alert;
+
 
 public class Util {
 
-    public static String reverseString(String str){
-        char[] array = str.toCharArray();
-        String result = "";
-        for (int i = array.length - 1; i >= 0; i--) {
-            result = result + array[i];
-        }
-        return result;
+    public void messageBox(String title, String message){
+        Alert alert = new Alert (Alert.AlertType.INFORMATION);
+        alert.setTitle (title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
-
-
-
-
 }
