@@ -8,20 +8,20 @@ import org.example.sourceClass.RichClient;
 import org.example.sourceClass.StudentClient;
 
 public class Controller {
-    private RichClient rich = new RichClient();
-    private PoorClient poor = new PoorClient();
-    private StudentClient student = new StudentClient();
+    private final RichClient rich = new RichClient();
+    private final PoorClient poor = new PoorClient();
+    private final StudentClient student = new StudentClient();
 
     @FXML
     private URL location;
 
     @FXML
-    private TextField str1;
+    private TextField textField1;
 
     @FXML
-    private TextField str2;
+    private TextField textField2;
     @FXML
-    private ComboBox<String> Cbox;
+    private ComboBox<String> ComboBox;
 
     @FXML
     void cash(ActionEvent event) {
@@ -31,15 +31,15 @@ public class Controller {
         } else if (!chekTextFieldNumber()) {
             u.messageBox("Ошибка", "Введена неверная сумма");
         } else {
-            if (Cbox.getValue().equals("Богатый клиент")) {
-                rich.get_cash(str1.getText(), Integer.parseInt(str2.getText()));
+            if (ComboBox.getValue().equals("Богатый клиент")) {
+                rich.get_cash(textField1.getText(), Integer.parseInt(textField2.getText()));
                 u.messageBox("Богатый клиент", "Дорогой " + rich.get_name() + ", деньги в размере " + rich.get_money().get_summ() + "$ успешно сняты с вашего счета");
-            } else if (Cbox.getValue().equals("Бедный клиент")) {
-                poor.get_cash(str1.getText(), Integer.parseInt(str2.getText()));
+            } else if (ComboBox.getValue().equals("Бедный клиент")) {
+                poor.get_cash(textField1.getText(), Integer.parseInt(textField2.getText()));
                 u.messageBox("Бедный клиент", "Клиент под именем " + poor.get_name() + ", деньги в размере " + poor.get_money().get_summ() + "$ успешно сняты с вашего счета");
             }
-            if (Cbox.getValue().equals("Студент")) {
-                student.get_cash(str1.getText(), Integer.parseInt(str2.getText()));
+            if (ComboBox.getValue().equals("Студент")) {
+                student.get_cash(textField1.getText(), Integer.parseInt(textField2.getText()));
                 u.messageBox("Студент", "Студент под именем " + student.get_name() + ", деньги в размере " + student.get_money().get_summ() + "$ успешно сняты с вашего счета");
             }
         }
@@ -51,14 +51,14 @@ public class Controller {
     }
 
     public void setComboBox() {
-        Cbox.getItems().removeAll(Cbox.getItems());
-        Cbox.getItems().addAll("Богатый клиент", "Бедный клиент", "Студент");
-        Cbox.getSelectionModel().select("Студент");
+        ComboBox.getItems().removeAll(ComboBox.getItems());
+        ComboBox.getItems().addAll("Богатый клиент", "Бедный клиент", "Студент");
+        ComboBox.getSelectionModel().select("Студент");
     }
 
     public boolean chekTextFieldNumber() {
         try {
-            Integer.parseInt(str2.getText());
+            Integer.parseInt(textField2.getText());
         } catch (Exception e) {
             return false;
         }
@@ -66,7 +66,7 @@ public class Controller {
     }
 
     public boolean chekTextFieldEmpty() {
-        if (str1.getText().equals("") || str2.getText().equals("")) {
+        if (textField1.getText().equals("") || textField2.getText().equals("")) {
             return true;
         }
         return false;
